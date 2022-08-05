@@ -32,66 +32,127 @@ numero7.addEventListener ("click", agregarNumero7);
 numero8.addEventListener ("click", agregarNumero8);
 numero9.addEventListener ("click", agregarNumero9);
 
-
+//agregar elementos al primer array
 
 function agregarNumero0() {
     arryPrimerNumero.push("0");
     console.log(arryPrimerNumero);
-    input.value = arryPrimerNumero;
+    arryPrimerNumerostring = arryPrimerNumero.toString()
+    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
+    console.log(arryPrimerNumerostring)
+    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
+    console.log(arryPrimerNumeroNumber)
+    input.value = arryPrimerNumeroNumber;
 }
 
-function agregarNumero1() {
+function agregarNumero1() { 
     arryPrimerNumero.push("1");
     console.log(arryPrimerNumero);
-    input.value = arryPrimerNumero;
+    arryPrimerNumerostring = arryPrimerNumero.toString()
+    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
+    console.log(arryPrimerNumerostring)
+    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
+    console.log(arryPrimerNumeroNumber)
+    input.value = arryPrimerNumeroNumber;
 }
 
 function agregarNumero2() {
     arryPrimerNumero.push("2");
     console.log(arryPrimerNumero);
-    input.value = arryPrimerNumero;
+    arryPrimerNumerostring = arryPrimerNumero.toString()
+    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
+    console.log(arryPrimerNumerostring)
+    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
+    console.log(arryPrimerNumeroNumber)
+    input.value = arryPrimerNumeroNumber;
 }
 
 function agregarNumero3() {
     arryPrimerNumero.push("3");
     console.log(arryPrimerNumero);
-    input.value = arryPrimerNumero;
+    arryPrimerNumerostring = arryPrimerNumero.toString()
+    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
+    console.log(arryPrimerNumerostring)
+    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
+    console.log(arryPrimerNumeroNumber)
+    input.value = arryPrimerNumeroNumber;
 }
 
 function agregarNumero4() {
     arryPrimerNumero.push("4");
     console.log(arryPrimerNumero);
-    input.value = arryPrimerNumero;
+    arryPrimerNumerostring = arryPrimerNumero.toString()
+    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
+    console.log(arryPrimerNumerostring)
+    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
+    console.log(arryPrimerNumeroNumber)
+    input.value = arryPrimerNumeroNumber;
 }
 
 function agregarNumero5() {
     arryPrimerNumero.push("5");
     console.log(arryPrimerNumero);
-    input.value = arryPrimerNumero;
+    arryPrimerNumerostring = arryPrimerNumero.toString()
+    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
+    console.log(arryPrimerNumerostring)
+    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
+    console.log(arryPrimerNumeroNumber)
+    input.value = arryPrimerNumeroNumber;
 }
 
 function agregarNumero6() {
     arryPrimerNumero.push("6");
     console.log(arryPrimerNumero);
-    input.value = arryPrimerNumero;
+    arryPrimerNumerostring = arryPrimerNumero.toString()
+    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
+    console.log(arryPrimerNumerostring)
+    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
+    console.log(arryPrimerNumeroNumber)
+    input.value = arryPrimerNumeroNumber;
 }
 
 function agregarNumero7() {
     arryPrimerNumero.push("7");
     console.log(arryPrimerNumero);
-    input.value = arryPrimerNumero;
+    arryPrimerNumerostring = arryPrimerNumero.toString()
+    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
+    console.log(arryPrimerNumerostring)
+    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
+    console.log(arryPrimerNumeroNumber)
+    input.value = arryPrimerNumeroNumber;
 }
 
 function agregarNumero8() {
     arryPrimerNumero.push("8");
     console.log(arryPrimerNumero);
-    input.value = arryPrimerNumero;
+    arryPrimerNumerostring = arryPrimerNumero.toString()
+    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
+    console.log(arryPrimerNumerostring)
+    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
+    console.log(arryPrimerNumeroNumber)
+    input.value = arryPrimerNumeroNumber;
 }
 
 function agregarNumero9() {
     arryPrimerNumero.push("9");
     console.log(arryPrimerNumero);
-    input.value = arryPrimerNumero;
+    arryPrimerNumerostring = arryPrimerNumero.toString()
+    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
+    console.log(arryPrimerNumerostring)
+    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
+    console.log(arryPrimerNumeroNumber)
+    input.value = arryPrimerNumeroNumber;
 }
 
 
+borrar.addEventListener("click", borrarUltimoNumero);
+
+function borrarUltimoNumero() {
+    if (arrySegundoNumero.length = 0) {
+
+
+
+    } else {
+        arrySegundoNumero.pop()
+    }
+}
