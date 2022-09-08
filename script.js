@@ -17,142 +17,129 @@ let sumar = document.querySelector(".sumar");
 let numero0 = document.querySelector(".cero");
 let decimal = document.querySelector(".decimal");
 let contendorResultados = document.querySelector(".contendorResultados");
+let interesCompuesto = document.querySelector(".InteresCompuesto")
+let igual = document.querySelector(".igual")
 
-let arryPrimerNumero =[];
-let arrySegundoNumero = [];
+let arryPrimerNumero ="";
+let numeroGuardados =[];
+let operacion = ""
+let resultadoOperaciones;
 
-numero0.addEventListener ("click", agregarNumero0);
-numero1.addEventListener ("click", agregarNumero1);
-numero2.addEventListener ("click", agregarNumero2);
-numero3.addEventListener ("click", agregarNumero3);
-numero4.addEventListener ("click", agregarNumero4);
-numero5.addEventListener ("click", agregarNumero5);
-numero6.addEventListener ("click", agregarNumero6);
-numero7.addEventListener ("click", agregarNumero7);
-numero8.addEventListener ("click", agregarNumero8);
-numero9.addEventListener ("click", agregarNumero9);
+numero0.addEventListener ("click", agregarNumero);
+numero1.addEventListener ("click", agregarNumero);
+numero2.addEventListener ("click", agregarNumero);
+numero3.addEventListener ("click", agregarNumero);
+numero4.addEventListener ("click", agregarNumero);
+numero5.addEventListener ("click", agregarNumero);
+numero6.addEventListener ("click", agregarNumero);
+numero7.addEventListener ("click", agregarNumero);
+numero8.addEventListener ("click", agregarNumero);
+numero9.addEventListener ("click", agregarNumero);
+borrar.addEventListener("click", borrarUltimoNumero);
+eliminar.addEventListener("click", borrarTodo)
+sumar.addEventListener("click", suma)
+igual.addEventListener("click", resultado)
+restar.addEventListener("click", resta)
+multiplicar.addEventListener("click", multiplo)
+dividir.addEventListener("click", division)
 
 //agregar elementos al primer array
+function agregarNumero(numero) {
+    const numeroElegido = numero.srcElement.textContent;
+    arryPrimerNumero += numeroElegido;
+    //console.log({arryPrimerNumero, numeroElegido});
 
-function agregarNumero0() {
-    arryPrimerNumero.push("0");
-    console.log(arryPrimerNumero);
-    arryPrimerNumerostring = arryPrimerNumero.toString()
-    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
-    console.log(arryPrimerNumerostring)
-    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
-    console.log(arryPrimerNumeroNumber)
-    input.value = arryPrimerNumeroNumber;
-}
-
-function agregarNumero1() { 
-    arryPrimerNumero.push("1");
-    console.log(arryPrimerNumero);
-    arryPrimerNumerostring = arryPrimerNumero.toString()
-    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
-    console.log(arryPrimerNumerostring)
-    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
-    console.log(arryPrimerNumeroNumber)
-    input.value = arryPrimerNumeroNumber;
-}
-
-function agregarNumero2() {
-    arryPrimerNumero.push("2");
-    console.log(arryPrimerNumero);
-    arryPrimerNumerostring = arryPrimerNumero.toString()
-    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
-    console.log(arryPrimerNumerostring)
-    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
-    console.log(arryPrimerNumeroNumber)
-    input.value = arryPrimerNumeroNumber;
-}
-
-function agregarNumero3() {
-    arryPrimerNumero.push("3");
-    console.log(arryPrimerNumero);
-    arryPrimerNumerostring = arryPrimerNumero.toString()
-    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
-    console.log(arryPrimerNumerostring)
-    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
-    console.log(arryPrimerNumeroNumber)
-    input.value = arryPrimerNumeroNumber;
-}
-
-function agregarNumero4() {
-    arryPrimerNumero.push("4");
-    console.log(arryPrimerNumero);
-    arryPrimerNumerostring = arryPrimerNumero.toString()
-    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
-    console.log(arryPrimerNumerostring)
-    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
-    console.log(arryPrimerNumeroNumber)
-    input.value = arryPrimerNumeroNumber;
-}
-
-function agregarNumero5() {
-    arryPrimerNumero.push("5");
-    console.log(arryPrimerNumero);
-    arryPrimerNumerostring = arryPrimerNumero.toString()
-    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
-    console.log(arryPrimerNumerostring)
-    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
-    console.log(arryPrimerNumeroNumber)
-    input.value = arryPrimerNumeroNumber;
-}
-
-function agregarNumero6() {
-    arryPrimerNumero.push("6");
-    console.log(arryPrimerNumero);
-    arryPrimerNumerostring = arryPrimerNumero.toString()
-    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
-    console.log(arryPrimerNumerostring)
-    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
-    console.log(arryPrimerNumeroNumber)
-    input.value = arryPrimerNumeroNumber;
-}
-
-function agregarNumero7() {
-    arryPrimerNumero.push("7");
-    console.log(arryPrimerNumero);
-    arryPrimerNumerostring = arryPrimerNumero.toString()
-    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
-    console.log(arryPrimerNumerostring)
-    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
-    console.log(arryPrimerNumeroNumber)
-    input.value = arryPrimerNumeroNumber;
-}
-
-function agregarNumero8() {
-    arryPrimerNumero.push("8");
-    console.log(arryPrimerNumero);
-    arryPrimerNumerostring = arryPrimerNumero.toString()
-    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
-    console.log(arryPrimerNumerostring)
-    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
-    console.log(arryPrimerNumeroNumber)
-    input.value = arryPrimerNumeroNumber;
-}
-
-function agregarNumero9() {
-    arryPrimerNumero.push("9");
-    console.log(arryPrimerNumero);
-    arryPrimerNumerostring = arryPrimerNumero.toString()
-    arryPrimerNumerostring = arryPrimerNumerostring.replace(/(\,)/gm,"")
-    console.log(arryPrimerNumerostring)
-    arryPrimerNumeroNumber = parseFloat(arryPrimerNumerostring);
-    console.log(arryPrimerNumeroNumber)
-    input.value = arryPrimerNumeroNumber;
-}
-
-
-borrar.addEventListener("click", borrarUltimoNumero);
-
-function borrarUltimoNumero() {
-    if (arrySegundoNumero.length = 0) {
-
-
-
-    } else {
-        arrySegundoNumero.pop()
+    if (arryPrimerNumero[0] == 0) {
+        arryPrimerNumero =[]
+        return
     }
+    
+    input.value = arryPrimerNumero
 }
+
+
+//borrar ultimo elemento del array
+function borrarUltimoNumero() {
+    arryPrimerNumero = arryPrimerNumero.slice(0,-1)
+    input.value = arryPrimerNumero
+
+    console.log({arryPrimerNumero});
+}
+
+//borrar todo
+function borrarTodo() {
+    window.location.reload()
+}
+
+function suma() {
+    numeroGuardados.push(arryPrimerNumero)
+    arryPrimerNumero = ""
+    input.value = arryPrimerNumero
+    operacion = "suma" 
+    
+     console.log({arryPrimerNumero,
+        numeroGuardados,
+        operacion,
+        resultadoOperaciones}); 
+}
+
+function resta() {
+    numeroGuardados.push(arryPrimerNumero)
+    arryPrimerNumero = ""
+    input.value = arryPrimerNumero    
+    operacion = "resta"
+}
+
+function multiplo() {
+    numeroGuardados.push(arryPrimerNumero)
+    arryPrimerNumero = ""
+    input.value = arryPrimerNumero    
+    operacion = "multiplicar"
+}
+
+function division() {
+    numeroGuardados.push(arryPrimerNumero)
+    arryPrimerNumero = ""
+    input.value = arryPrimerNumero    
+    operacion = "division"
+    
+}
+
+function resultado() {
+    if (operacion == "suma") {
+        let sumarNumero = 0;
+            if (numeroGuardados.length < 2) {
+                resultadoOperaciones = Number(numeroGuardados[0]) + Number(arryPrimerNumero);
+                input.value = resultadoOperaciones
+                console.log("jaja"); 
+            } else {
+                for (let i = 0; i < numeroGuardados.length; i++) {
+                    sumarNumero += Number(numeroGuardados[i])
+                    console.log("jejeje");
+                    resultadoOperaciones = Number(arryPrimerNumero) + sumarNumero;
+                    input.value = resultadoOperaciones 
+                    console.log({sumarNumero,  arryPrimerNumero,numeroGuardados });
+                }
+            }
+    } else if(operacion == "resta"){
+        resultadoOperaciones = Number(numeroGuardados[0]) - Number(arryPrimerNumero);
+        input.value = resultadoOperaciones
+        console.log(resultadoOperaciones);
+    }else if(operacion == "multiplicar"){
+        resultadoOperaciones = Number(numeroGuardados[0]) * Number(arryPrimerNumero);
+        input.value = resultadoOperaciones
+        console.log(resultadoOperaciones);
+    } else if (operacion == "division"){
+        resultadoOperaciones = Number(numeroGuardados[0]) / Number(arryPrimerNumero);
+        input.value = resultadoOperaciones
+        console.log(resultadoOperaciones);
+    }
+    
+/*     console.log({arryPrimerNumero,
+        numeroGuardados,
+        operacion,
+        resultadoOperaciones}); */
+
+
+} 
+

@@ -57,6 +57,14 @@ div button:nth-child(16){
     grid-row-end: 5;
 }
 
+div button:nth-child(19){
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 6;
+    color: red;
+}
+
 .numero{
     font-weight: 900;
     background-color: #fafbfd;
@@ -68,10 +76,5 @@ button:hover{
 
 button:active{
     background-color: #c8c8c8;
-}
-
-.contendorResultados{
-    overflow-y: scroll;
-    height: 22rem;
 }
 
