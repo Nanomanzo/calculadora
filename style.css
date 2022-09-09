@@ -78,3 +78,24 @@ button:active{
     background-color: #c8c8c8;
 }
 
+
+/*interes compuesto*/
+.none{
+    display: none;
+}
+.contenedorInput .letraPequeña{
+    font-size: 25px;
+}
+
+
+div p{
+    width: 100%;
+    height: 13rem;
+    text-align: center;
+    padding-top: 20px;
+    background-color: #e4eaf2;
+    padding-right: 15px;
+    font-size: 20px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}

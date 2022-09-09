@@ -17,8 +17,9 @@ let sumar = document.querySelector(".sumar");
 let numero0 = document.querySelector(".cero");
 let decimal = document.querySelector(".decimal");
 let contendorResultados = document.querySelector(".contendorResultados");
-let interesCompuesto = document.querySelector(".InteresCompuesto")
+let sacarInteresCompuesto = document.querySelector(".interesCompuesto")
 let igual = document.querySelector(".igual")
+let contenedorInput = document.querySelector(".contenedorInput")
 
 let arryPrimerNumero ="";
 let numeroGuardados =[];
@@ -42,6 +43,7 @@ igual.addEventListener("click", resultado)
 restar.addEventListener("click", resta)
 multiplicar.addEventListener("click", multiplo)
 dividir.addEventListener("click", division)
+sacarInteresCompuesto.addEventListener("click", interesCompuesto)
 
 //agregar elementos al primer array
 function agregarNumero(numero) {
@@ -105,6 +107,41 @@ function division() {
     
 }
 
+
+
+function interesCompuesto() {
+    if (operacion == 0) {
+        numeroGuardados.push(arryPrimerNumero)
+        arryPrimerNumero = ""
+        input.value =""
+        input.placeholder="Duracion de la inversion (en años)";
+        input.classList.add("letraPequeña")
+        operacion = "interesCompuesto"
+        console.log({numeroGuardados, arryPrimerNumero, operacion});
+    } else if(operacion == "interesCompuesto") {
+        numeroGuardados.push(arryPrimerNumero)
+        input.placeholder="Rentabilidad anual";
+        input.value =""
+        arryPrimerNumero = ""
+        operacion = "interesCompuesto2"
+        console.log({numeroGuardados, arryPrimerNumero, operacion});
+    } else if(operacion == "interesCompuesto2"){
+        numeroGuardados.push(arryPrimerNumero)
+        console.log({numeroGuardados, arryPrimerNumero, operacion});
+        operacion = "interesCompuesto3"
+
+        let resultadoInteres = numeroGuardados[0] * (1+(numeroGuardados[2]/100))**numeroGuardados[1]
+        resultadoInteres = resultadoInteres.toFixed(2)
+
+        input.classList.add("none")
+        let resultadoInteresCompuesto = document.createElement("p");
+        resultadoInteresCompuesto.innerHTML = "Tu interes compuesto con el capital inicial <b>" +      numeroGuardados[0] + "</b>  durante <b>" + numeroGuardados[2] + "</b> años, y con una rentabilidad anual del <b>" + numeroGuardados[1] + "</b> es igual a <b>" +  resultadoInteres;
+        contenedorInput.appendChild(resultadoInteresCompuesto)
+    } else if(operacion == "interesCompuesto3"){
+        window.location.reload()
+    }
+}
+
 function resultado() {
     if (operacion == "suma") {
         let sumarNumero = 0;
@@ -133,13 +170,26 @@ function resultado() {
         resultadoOperaciones = Number(numeroGuardados[0]) / Number(arryPrimerNumero);
         input.value = resultadoOperaciones
         console.log(resultadoOperaciones);
+    } else if(operacion == "interesCompuesto") {
+        numeroGuardados.push(arryPrimerNumero)
+        input.placeholder="Rentabilidad anual";
+        input.value =""
+        arryPrimerNumero = ""
+        operacion = "interesCompuesto2"
+        console.log({numeroGuardados, arryPrimerNumero, operacion});
+    } else if(operacion == "interesCompuesto2"){
+        numeroGuardados.push(arryPrimerNumero)
+        console.log({numeroGuardados, arryPrimerNumero, operacion});
+        operacion = "interesCompuesto3"
+
+        let resultadoInteres = numeroGuardados[0] * (1+(numeroGuardados[2]/100))**numeroGuardados[1]
+        resultadoInteres = resultadoInteres.toFixed(2)
+
+        input.classList.add("none")
+        let resultadoInteresCompuesto = document.createElement("p");
+        resultadoInteresCompuesto.innerHTML = "Tu interes compuesto con el capital inicial <b>" +      numeroGuardados[0] + "</b>  durante <b>" + numeroGuardados[2] + "</b> años, y con una rentabilidad anual del <b>" + numeroGuardados[1] + "</b> es igual a <b>" +  resultadoInteres;
+        contenedorInput.appendChild(resultadoInteresCompuesto)
+    } else if(operacion == "interesCompuesto3"){
+        window.location.reload()
     }
-    
-/*     console.log({arryPrimerNumero,
-        numeroGuardados,
-        operacion,
-        resultadoOperaciones}); */
-
-
 } 
-
